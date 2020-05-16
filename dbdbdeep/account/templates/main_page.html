@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--파일 나중에 옮길거면 경로도 바꿔주셔야 합니다 예전 경로는 'DEEPDB/main_base.html' 이였어요-->
+{% extends 'main_base.html' %}
+{% block content %}
+<strong> <h2>Welcome to DEEP DB!</h2></strong>>
+<div class="jumbotron">
+    <p>
+        <strong>방문해주셔서 감사합니다!</strong><br />
+        DEEP DB에서는 <strong>관계형 데이터베이스</strong>를 학습할 수 있습니다.<br />
+        현재 보시는 페이지는 테스트 페이지이며 자세한 내용 및 업데이트는 <strong><a href="https://github.com/DBDB-DEEP" rel="nofollow">여기서</a></strong> 보실 수 있습니다. <br />
+        DEEP DB에서는 SQL 예제 코드를 실행하며 필수적인 개발에 필요한 SQL을 빠르게 익힐 수 있도록 지원합니다.<br />
+        또한 머신러닝을 이용하여 SQL을 자연어로, 자연어를 SQL로 번역하여 실습 하여 볼 수도 있습니다.
+    </p>
+</div>
+{% endblock %} {% block footer %}
+<div class="boxA">
+    <div class="box">
+        <img src="images/img01.jpg" width="320" height="180" alt="" />
+        <h3>DB 배우기</h3>
+        <p>DB 학습 컨텐츠에 대한 설명</p>
+        <a href="#" class="button">Read More</a>
+    </div>
+    <div class="box">
+        <img src="images/img01.jpg" width="320" height="180" alt="" />
+        <h3>SQL 질문답변</h3>
+        <p>궁금하신 점이 있으신가요?</p>
+        <a href="#" class="button">Read More</a>
+    </div>
+</div>
+<div class="boxB">
+    <div class="box">
+        <img src="images/img03.jpg" width="320" height="180" alt="" />
+        <h3>SQL 배우기</h3>
+        <p>SQL 학습 컨텐츠에 대한 설명</p>
+        <a href="/learn/1" accesskey="3" title="" class="button">Read More</a>
+    </div>
+    <div class="box">
+        <img src="images/img03.jpg" width="320" height="180" alt="" />
+        <h3>SQL 해석기</h3>
+        <p>SQL 해석기에 관한 설명</p>
+        <a href="/translate/" class="button">Read More</a>
+    </div>
+</div>
+<div class="boxC">
+    <div class="box">
+        <img src="images/img04.jpg" width="320" height="180" alt="" />
+        <h3>SQL QUIZ</h3>
+        <p>SQL QUIZ에 대한 설명</p>
+        <a href="/quiz/" accesskey="5" title="" class="button">Read More</a>
+    </div>
+    <div class="box">
+        <img src="images/img03.jpg" width="320" height="180" alt="" />
+        <h3>회원가입</h3>
+        <p>더 많은 기능을 사용해보세요<br /></p>
+        <a href="#" class="button">Read More</a>
+    </div>
+</div>
+
+
+{% endblock %}

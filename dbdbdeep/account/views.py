@@ -3,6 +3,8 @@ from django.views import View
 from .models import Account
 from django.http import HttpResponse, JsonResponse
 from .models import *
+from django.contrib import auth
+
 
 def signUp(request):
     return render(request, 'sign_up.html')
@@ -13,18 +15,40 @@ def doSignUp(request):
         password = request.POST['password']
         name = request.POST['name']
         nickname = request.POST['nickname']
+        if request.POST["password"]== request.POST["password2"]:
+            new_user = Account(
+                email=email,
+                password = password,
+                name = name,
+                nickname = nickname
+                )
+            new_user.save()
+            return render(request, 'signupSuccess.html')
 
-        new_user = Account(
-            email=email,
-            password = password,
-            name = name,
-            nickname = nickname
-            )
-        new_user.save()
+        else:
+            return render(request, 'sign_up.html')    
+
+
+ 
+
+def signIn(request):
+    return render(request, 'sign_in.html')
+
+def doSignIn(request):
+    if request.method == 'POST' :
+        email = request.POST['email']
+        password = request.POST['password']
+        checklogin = False
+        infos=Account.objects.all()
+        for info in infos:
+            if info.email==email and info.password==password:
+                checklogin = True
+                return render(request, 'main_page.html')
+            else:
+                return render(request,'sign_in')
+                
+
         
-    return render(request, 'signupSuccess.html')
-
-
 
 # class SignUpView(View):
 #     def post(self, request):
